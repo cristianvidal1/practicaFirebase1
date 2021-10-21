@@ -1,0 +1,17 @@
+
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col" *ngFor="let Usuario of usuarios">
+            <div class="p">
+              <div class="card" style="width: 18rem;">
+                <img [src]="Usuario.url" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title"></h5>
+                  <p class="card-text">{{Usuario.Nombre}}</p>
+                  <a href="#" class="btn btn-primary">{{Usuario.Cargo}}</a>
+                </div>
+              </div>
+            </div>
+          </div> 
+    </div>
+</div>
