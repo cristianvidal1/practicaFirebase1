@@ -13,25 +13,41 @@ export class AppComponent {
   title = 'practicaFirebase1';
  
 
- public usuarios?: Usuarios[];
+ public usuarios: Usuarios[]=[];
+ public documentId = null;
+ public currentStatus = 1;
+ 
+ public newUsuariosForm = new FormGroup({
+   Nombre: new FormControl('',Validators.required),
+   Url: new FormControl('', Validators.required),
+   id: new FormControl('')
+ });
+
   constructor(private serviceUsuarios: UsuariosService){
-    this.serviceUsuarios.Usuarios.subscribe((resp: Usuarios[] | undefined)=> {
+    this.serviceUsuarios.Usuarios.subscribe((resp: Usuarios[])=> {
       this.usuarios= resp;
       console.log(this.usuarios);
 
-      this.newUsuariosForm.setValue({
-        id: '',
-        Nombre: '',
-        Url: ''
-      })
-    })
-  }
-  public documentId = null;
-  public currentStatus = 1;
-  public newUsuariosForm = new FormGroup({
-    Nombre: new FormControl('',Validators.required),
-    Url: new FormControl('', Validators.required),
-    id: new FormControl('')
-  });
+    })}
+  
+ 
+onSubmit(f: { value: any; }) {
+    console.log(f.value);
+}
 
+editarUsuario(usuario: Usuarios){
+  
+  this.newUsuariosForm.setValue({
+    id: '',
+    Nombre: usuario.Nombre,
+    Url: ''
+  })
+}
+borrarUsuarios(usuario: Usuarios){
+  this.serviceUsuarios.borrarUsuarios(usuario.id).then(()=>{
+    console.log('Usuario eliminado');
+  }, (error: any) => {
+    console.error(error);
+  });
+}
 }
