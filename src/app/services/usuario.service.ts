@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
-
-
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Usuarios } from 'src/app/models/producto.interface';
+import { Usuarios } from 'src/app/models/usuarios.interface';
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -35,9 +35,9 @@ export class UsuariosService {
     return this.firestore.collection('Usuarios').doc(prodId).set(data);
   }
 
-  //borrar personas
-  public borrarUsuarios(prodId: string): Promise<void>{
-    return new Promise(async(resolve, reject) =>{
+  //borrar usuarios
+  public borrarUsuario(prodId: string): Promise<void>{
+    return new Promise(async(resolve, reject) => {
       try {
         const result = await this.usuariosCollection?.doc(prodId).delete();
         resolve(result)

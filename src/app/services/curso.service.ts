@@ -1,8 +1,5 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
-
-
-
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Curso } from '../models/curso.interface';

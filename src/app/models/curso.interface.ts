@@ -4,5 +4,6 @@ export interface Curso{
     Duracion: number,
     FechaDeInicio: number,
     Id: string,
-    Nombre: string
+    Nombre: string,
+    Url: string
 }
