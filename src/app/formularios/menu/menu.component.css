@@ -19,3 +19,16 @@
 .contenedor-curso{
     align-items: center;
 }
+.separacion{
+align-items: center;
+}
+.separacion2{
+    margin-top: 150px;
+}
+.titulo-vegano{
+    text-align: center;
+    margin-top: 150px;
+}
+.modal-producto{
+    margin-left: 10px; 
+}

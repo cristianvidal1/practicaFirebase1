@@ -2,10 +2,16 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 
-//Angular
-import {MatCardModule} from '@angular/material/card';
-//PrimeNg
+
+//PrimeNg Modulos
 import {MenubarModule} from 'primeng/menubar';
+import {CardModule} from 'primeng/card';
+import {ImageModule} from 'primeng/image';
+import {CarouselModule} from 'primeng/carousel';
+import {FieldsetModule} from 'primeng/fieldset';
+
+
+
 //Firebase
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFireModule } from '@angular/fire/compat';
@@ -27,14 +33,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { FormularioComponent } from './formularios/formulario/formulario.component';
+import { MenuComponent } from './formularios/menu/menu.component';
+import { ProductosComponent } from './component/productos/productos.component';
 
 
 const routes: Routes = [
-  {
-    path: 'formulario',
-    component: FormularioComponent
-  }
+
 ]
 @NgModule({
   declarations: [
@@ -46,7 +50,9 @@ const routes: Routes = [
     AgregarCursosComponent,
     LoginComponent,
     RegisterComponent,
-    FormularioComponent
+    MenuComponent,
+    ProductosComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -54,12 +60,15 @@ const routes: Routes = [
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     BrowserAnimationsModule,
-    MatCardModule,
     RouterModule.forRoot(routes),
     FormsModule,
     ReactiveFormsModule,
     AngularFireAuthModule,
-    MenubarModule
+    MenubarModule,
+    CardModule,
+    ImageModule,
+    CarouselModule,
+    FieldsetModule
   ],
   providers: [],
   bootstrap: [AppComponent]
