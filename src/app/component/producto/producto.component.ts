@@ -1,19 +1,3 @@
-import { Component, OnInit } from '@angular/core';
-import { Usuarios } from 'src/app/models/usuarios.interface';
-import { UsuariosService } from 'src/app/services/usuario.service';
-
-@Component({
-  selector: 'app-producto',
-  templateUrl: './producto.component.html',
-  styleUrls: ['./producto.component.css']
-})
-export class ProductoComponent implements OnInit {
-
-  public usuarios!: Usuarios[];
-  constructor(private usuariosService: UsuariosService) { }
-
-  ngOnInit(): void {
-    this.usuariosService.Usuarios.subscribe(respuesta => (this.usuarios = respuesta))
-  }
-
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:d767fdf5967af9e59ce7ed76545c1112ecadd3a1ff48e1f590af307e0ab95177
+size 578
